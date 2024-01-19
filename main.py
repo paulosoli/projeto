@@ -4,7 +4,7 @@ import requests
 from bs4 import BeautifulSoup
 from urllib.parse import urljoin, urlparse
 
-
+##teste
 def download_images(url):
     try:
         resposta = requests.get(url)
