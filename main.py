@@ -4,9 +4,10 @@ import requests
 from bs4 import BeautifulSoup
 from urllib.parse import urljoin, urlparse
 
-##teste
+##Função para baixar as imagens
 def download_images(url):
     try:
+        ##Requisição para HTTP à URL inserida
         resposta = requests.get(url)
         resposta.raise_for_status()
 
