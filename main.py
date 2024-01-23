@@ -11,10 +11,13 @@ def download_images(url):
         resposta = requests.get(url)
         resposta.raise_for_status()
 
+        # Analisa o conteúdo HTML da página usando BeautifulSoup
         soup = BeautifulSoup(resposta.text, "html.parser")
 
+        # Encontra todas as tags de imagem (img) na página
         tags_img = soup.find_all("img")
 
+        # Cria um diretório para armazenar as imagens baixadas, se não existir
         os.makedirs("imagens_baixadas", exist_ok=True)
 
         for tag_img in tags_img:
